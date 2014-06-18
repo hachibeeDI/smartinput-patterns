@@ -26,6 +26,12 @@ call smartinput#define_rule({
 \   'input'    : '<Right><CR>',
 \   'filetype' : ['python'],
 \   })
+call smartinput#define_rule({
+\   'at'       : '^\s*\%(\<def\>\|\<if\>\|\<for\>\|\<while\>\|\<class\>\|\<with\>\)\s*\w\+.*\%#):$',
+\   'char'     : '<CR>',
+\   'input'    : '<End><CR>',
+\   'filetype' : ['python'],
+\   })
 " 辞書の宣言なことが明らかなケースではsmartchrを呼び出す
 call smartinput#define_rule({
 \   'at'       : '{.\+\%#',
