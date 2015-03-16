@@ -13,7 +13,7 @@ call smartinput#map_to_trigger('i', '%', '%', '%')
 
 " common rules
 let s:cstyle_commentable_filetypes =
-      \ get(g:, 'cstyle_commentable_filetypes', ['java', 'cpp', 'cs', 'haxe', 'objc', ])
+      \ get(g:, 'cstyle_commentable_filetypes', ['java', 'cpp', 'cs', 'haxe', 'objc', 'javascript', 'typescript', 'go', ])
 
 " smartinput for C like style comments {{{
 call smartinput#define_rule({
