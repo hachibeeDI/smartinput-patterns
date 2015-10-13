@@ -1,18 +1,18 @@
 
-call smartinput#define_rule({
+call lexima#add_rule({
 \   'at'       : '^\%#',
 \   'char'     : '-',
 \   'input'    : '- ()<Left>',
 \   'filetype': ['objc', 'objcpp'],
 \   })
-call smartinput#define_rule({
+call lexima#add_rule({
 \   'at'       : '^\%#',
 \   'char'     : '+',
 \   'input'    : '+ ()<Left>',
 \   'filetype': ['objc', 'objcpp'],
 \   })
 
-call smartinput#define_rule({
+call lexima#add_rule({
 \   'at'       : '[^^]\%#',
 \   'char'     : ']',
 \   'input'    : '<Esc>bi[<Esc>ea ]<Left>',

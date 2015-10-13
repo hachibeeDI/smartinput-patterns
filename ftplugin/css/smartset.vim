@@ -1,6 +1,6 @@
 
 " css have only a comment style '/* */'
-call smartinput#define_rule({
+call lexima#add_rule({
 \   'at': '/\%#',
 \   'char': '/',
 \   'input': '*<Space><Space>*/<Left><Left><Left>',

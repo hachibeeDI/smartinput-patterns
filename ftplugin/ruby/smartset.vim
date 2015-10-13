@@ -1,6 +1,6 @@
 
-" its in examples in smartinput. insert #{} in a string literal.
-call smartinput#define_rule({
+" its in examples in lexima. insert #{} in a string literal.
+call lexima#add_rule({
 \   'at': '\%#',
 \   'char': '#',
 \   'input': '#{}<Left>',
@@ -8,14 +8,14 @@ call smartinput#define_rule({
 \   'syntax': ['Constant', 'Special'],
 \ })
 
-" add bar(`|`) in smartinput definitions and define input rule. {{{
-call smartinput#define_rule({
+" add bar(`|`) in lexima definitions and define input rule. {{{
+call lexima#add_rule({
 \   'at': '\%#',
 \   'char': '<Bar>',
 \   'input': '<Bar><Bar><Left>',
 \   'filetype': ['ruby'],
 \ })
-call smartinput#define_rule({
+call lexima#add_rule({
 \   'at': '|\%#|',
 \   'char': '<BS>',
 \   'input': '<BS><Del>',
@@ -24,7 +24,7 @@ call smartinput#define_rule({
 "}}}
 
 " insert <bar> on both side of block argsments.
-call smartinput#define_rule({
+call lexima#add_rule({
 \   'at': '\({\|\<do\>\)\s*\%#',
 \   'char': '<Bar>',
 \   'input': '<Bar><Bar><Left>',
