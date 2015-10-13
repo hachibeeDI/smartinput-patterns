@@ -1,3 +1,12 @@
+let s:save_cpo = &cpo
+set cpo&vim
+
+if exists('g:lexima_patterns__python')
+  finish
+endif
+
+
+
 
 " classとかの定義時に:までを入れる
 call lexima#add_rule({
@@ -61,3 +70,31 @@ call lexima#add_rule({
 \   'syntax'   : ["Constant"],
 \   'filetype' : ['python'],
 \   })
+
+
+call g:lexima#add_rule({
+\   'at': '^\s*from\%#',
+\   'char': '<Space>',
+\   'input': '<Space><C-x><C-o>',
+\   'filetype': 'python',
+\ })
+call g:lexima#add_rule({
+\   'at': '^\s*from\s.\+ import\%#',
+\   'char': '<Space>',
+\   'input': '<Space><C-x><C-o>',
+\   'filetype': 'python',
+\ })
+call g:lexima#add_rule({
+\   'at': '^\s*import\%#',
+\   'char': '<Space>',
+\   'input': '<Space><C-x><C-o>',
+\   'filetype': 'python',
+\ })
+
+
+
+
+let g:lexima_patterns__python = 1
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
