@@ -61,6 +61,14 @@ call lexima#add_rule({
 " }}}
 
 
+call lexima#add_rule({
+\   'at': '\%#',
+\   'char': '-',
+\   'input': '-',
+\   'syntax': ['Comment'],
+\   'priority': 999
+\ })
+
 
 let g:lexima_patterns = 1
 
