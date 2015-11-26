@@ -37,7 +37,7 @@ call lexima#add_rule({
 call lexima#add_rule({
 \   'at': '\%#',
 \   'char': '*',
-\   'input': '<BS>',
+\   'input': '*',
 \   'filetype': ['go'],
 \   'priority': 999,
 \ })
