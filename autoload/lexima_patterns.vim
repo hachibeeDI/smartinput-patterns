@@ -5,7 +5,7 @@ set cpo&vim
 function! s:def_cstyle_comments()
   " common rules
   let s:cstyle_commentable_filetypes =
-        \ get(g:, 'cstyle_commentable_filetypes', ['java', 'cpp', 'cs', 'haxe', 'objc', 'javascript', 'jsx', 'typescript', 'go', ])
+        \ get(g:, 'cstyle_commentable_filetypes', ['java', 'cpp', 'cs', 'haxe', 'objc', 'javascript', 'javascript.jsx', 'typescript', 'go', ])
 
   " lexima for C like style comments {{{
   call lexima#add_rule({
@@ -24,7 +24,8 @@ function! s:def_cstyle_comments()
   call lexima#add_rule({
   \   'at': '// \%#',
   \   'char': '/',
-  \   'input': '<BS><BS>*<Space><Space>*/<Left><Left><Left>',
+  \   'input': '<BS><BS>** ',
+  \   'input_after': ' */',
   \   'filetype': s:cstyle_commentable_filetypes,
   \ })
   call lexima#add_rule({
